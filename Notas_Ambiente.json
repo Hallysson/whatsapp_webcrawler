@@ -1,0 +1,22 @@
+{
+    "Tutorial" : "https://imasters.com.br/back-end/desenvolvendo-web-crawler-e-bots-com-selenium-web-driver-em-php",
+    "Componentes externos" : [
+        {
+        "Composer" : 
+            {
+            "Instalação" : "https://www.youtube.com/watch?v=SuRbWTx8j2M",
+            "Playlist Youtube": "https://www.youtube.com/playlist?list=PLVSNL1PHDWvSrVzXyKxBc5cPM4sU7-c2T"
+            }
+        },
+        {
+        "Selenium" :
+            {
+                "Download" : "https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar",
+                "Inicialização" : "java -jar selenium-server-standalone-3.141.59.jar"
+            }
+        },
+        {
+            "Chromedriver Linux" : "https://chromedriver.storage.googleapis.com/84.0.4147.30/chromedriver_linux64.zip"
+        }
+    ]
+}

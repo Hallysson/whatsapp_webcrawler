@@ -1,0 +1,13 @@
+{
+    "name": "crawler/whatsapp",
+    "description": "Webcrawler para automaçao de envio de mensagens via Whatsapp",
+    "authors": [
+        {
+            "name": "Hall",
+            "email": "correio.h@gmail.com"
+        }
+    ],
+    "require": {
+        "facebook/webdriver": "^1.7"
+    }
+}

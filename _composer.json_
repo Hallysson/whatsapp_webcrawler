@@ -1,0 +1,13 @@
+{
+    "name": "crawler/whatsapp",
+    "description": "",
+    "authors": [
+        {
+            "name": "HG",
+            "email": "correio.h@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8"
+    }
+}

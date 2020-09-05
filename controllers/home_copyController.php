@@ -1,11 +1,11 @@
 <?php
-class homeController extends controllerGeral {
+class home_copyController extends controllerGeral {
 
 	public function index() {
 		$dados = array();
-                                                                                                                                                                                                                                              
+
 		$e = new Emojis();
- 
+
 		$total_emojis = $e->obterTotalEmojis();
 		$emojis = $e->obterTodosEmojis();
 		$total_categorias = $e->ObterTotalCategorias();
@@ -31,13 +31,16 @@ class homeController extends controllerGeral {
 		$this->loadTemplate('home', $dados);
 	}
 
-	public function obterEmojisCategoria($categoria){
+	public function obterEmojisCategorias($categoria){
+		$dados = array();
 
 		$e = new Emojis();
-		
-		$emojis_categorias = $e->obterEmojisFiltroCategoria($categoria);
 
-		return $emojis_categorias;
+		$emojis_categoria = $e->obterEmojisFiltroCategorias($categoria);
+		
+		$dados['emogis_categoria'] = $emojis_categoria;
+
+		$this->loadTemplate('home', $dados);
 	}
 
 }

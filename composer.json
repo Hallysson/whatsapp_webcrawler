@@ -8,6 +8,7 @@
         }
     ],
     "require": {
-        "facebook/webdriver": "^1.7"
+        "facebook/webdriver": "^1.7",
+        "components/jquery": "^3.2"
     }
 }

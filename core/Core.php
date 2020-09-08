@@ -32,9 +32,9 @@ class Core {
 			$currentController = 'homeController';
 			$currentAction = 'index';
 		}
-
-		/*		
-		echo '<hr/>';
+		
+		/*
+		cho '<hr/>';
 		echo 'CONTROLLER: '.$currentController."<br/>";
 		echo 'ACTION: '.$currentAction."<br/>";
 		echo 'PARAMS: '.print_r($params, true)."<br/>";

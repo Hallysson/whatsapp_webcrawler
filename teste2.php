@@ -8,7 +8,7 @@ header("Content-type: text/html; charset=utf-8"); //definindo o cabeçalho para 
 
 require_once('vendor/autoload.php'); //realizando o autoload das classes pelo composer
 
-$url = 'https://web.whatsapp.com'; // definindo a url como a do google
+$url = 'https://web.whatsapp.com'; // definindo a url
 
 $host = 'http://localhost:4444/wd/hub'; // Host default
 $capabilities = DesiredCapabilities::chrome(); // escolhendo o driver como chrome

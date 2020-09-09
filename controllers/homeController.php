@@ -19,12 +19,12 @@ class homeController extends controllerGeral {
 		$this->loadTemplate('home', $dados);
 	}
 
-	public function obterEmoji($coddec){
+	public function obterEmoji($codhex){
 		$dados = array();
 
 		$e = new Emojis();
 
-		$obterEmoji = $e->obterUmEmoji($coddec);
+		$obterEmoji = $e->obterUmEmoji($codhex);
 
 		$dados['obterEmoji'] = $obterEmoji;
 
@@ -38,6 +38,15 @@ class homeController extends controllerGeral {
 		$emojis_categorias = $e->obterEmojisFiltroCategoria($categoria);
 
 		return $emojis_categorias;
+	}
+
+	public function obterEmojisSubcategoria($categoria, $subcategoria){
+
+		$e = new Emojis();
+		
+		$emojis_categorias_subcategoria = $e->obterEmojisFiltroSubcategoria($categoria, $subcategoria);
+
+		return $emojis_categorias_subcategoria;
 	}
 
 }

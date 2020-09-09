@@ -40,6 +40,15 @@ class homeController extends controllerGeral {
 		return $emojis_categorias;
 	}
 
+	public function obterSubcategoria($categoria){
+		
+		$e = new Emojis();
+		
+		$subcategorias = $e->obterFiltroSubcategorias($categoria);
+
+		return $subcategorias;
+	}
+
 	public function obterEmojisSubcategoria($categoria, $subcategoria){
 
 		$e = new Emojis();

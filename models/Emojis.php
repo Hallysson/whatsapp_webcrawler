@@ -30,7 +30,7 @@ class Emojis extends modelGeral {
 	}
 	
 	public function obterEmojisFiltroCategoria($categoria) {
-		$sql = $this->db->prepare("SELECT codhex subcategoria, descricao FROM emojis WHERE tipo LIKE 'Emoji' AND qualificacao LIKE 'completamente qualificado' AND categoria LIKE :categoria");
+		$sql = $this->db->prepare("SELECT codhex, subcategoria, descricao FROM emojis WHERE tipo LIKE 'Emoji' AND qualificacao LIKE 'completamente qualificado' AND categoria LIKE :categoria");
 		$sql->bindValue(":categoria", $categoria);
 		$sql->execute();
 
@@ -76,15 +76,14 @@ class Emojis extends modelGeral {
 		return $row['c'];
 	}
 
-	public function obterTodasSubcategorias() {
-		$sql = $this->db->prepare("SELECT DISTINCT subcategoria FROM public.emojis WHERE tipo NOT LIKE 'Tom de Pele' ORDER BY subcategoria ASC");
+	public function obterFiltroSubcategorias($categoria) {
+		$sql = $this->db->prepare("SELECT DISTINCT categoria, subcategoria FROM public.emojis WHERE tipo NOT LIKE 'Tom de Pele' AND categoria LIKE :categoria ORDER BY categoria ASC, subcategoria ASC");
+		$sql->bindValue(":categoria", $categoria);
 		$sql->execute();
 
 		if($sql->rowCount() > 0) {
-			$array = $sql->fetchAll();
+			return $sql->fetchAll();
 		}
-
-		return $array;
 	}
 }
 ?>

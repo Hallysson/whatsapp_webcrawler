@@ -1,7 +1,7 @@
 --Fonte: https://www.w3schools.com/charsets/ref_emoji.asp
 
-drop table if exists usuarios;
-create table if not exists usuarios(
+drop table if exists public.usuarios;
+create table if not exists public.usuarios(
     id serial not null primary key,
     nome varchar(80) not null,
     email varchar(40) not null,
@@ -9,12 +9,12 @@ create table if not exists usuarios(
     telefone varchar(15)
 );
 
-insert into usuarios(nome, email, senha) VALUES
+insert into public.usuarios(nome, email, senha) VALUES
 ('Hall', 'correio.h@gmail.com', md5(restrito1)),
 ('Bruno', 'correio.bfg@gmail.com', md5(restrito1));
 
-drop table if exists emojis;
-create table if not exists emojis(
+drop table if exists public.emojis;
+create table if not exists public.emojis(
 	id serial not null primary key,
 	codDec varchar(6),
 	codHex varchar(5),
@@ -24,7 +24,7 @@ create table if not exists emojis(
 	descricao varchar(30)
 );
 
-insert into emojis(codDec, codHex, categoria, subcategoria, tipo) values
+insert into public.emojis(codDec, codHex, categoria, subcategoria, tipo) values
 ('8986','231A','Objetos','Objetos','Emoji'),
 ('8987','231B','Objetos','Objetos','Emoji'),
 ('9193','23E9','Símbolos','Símbolos','Emoji'),

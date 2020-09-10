@@ -1,7 +1,19 @@
 --Fonte: https://unicode.org/Public/emoji/13.0/emoji-test.txt
+drop table if exists public.usuarios;
+create table if not exists public.usuarios(
+    id serial not null primary key,
+    nome varchar(80) not null,
+    email varchar(40) not null,
+    senha varchar(32) not null,
+    telefone varchar(15)
+);
 
-drop table if exists emojis;
-create table if not exists emojis(
+insert into public.usuarios(nome, email, senha) VALUES
+('Hall', 'correio.h@gmail.com', md5(restrito1)),
+('Bruno', 'correio.bfg@gmail.com', md5(restrito1));
+
+drop table if exists public.emojis;
+create table if not exists public.emojis(
 	id serial not null primary key,
 	codHex varchar(100),
 	qualificacao varchar(30),
@@ -11,7 +23,7 @@ create table if not exists emojis(
 	tipo varchar(15)
 );
 
-insert into emojis(codHex, qualificacao, categoria, subcategoria, descricao, tipo) values
+insert into public.emojis(codHex, qualificacao, categoria, subcategoria, descricao, tipo) values
 ('&#x1F600','completamente qualificado','Smileys_Emoção','rosto sorridente','sorrindo rosto','Emoji'),
 ('&#x1F603','completamente qualificado','Smileys_Emoção','rosto sorridente','sorrindo rosto com grandes olhos','Emoji'),
 ('&#x1F604','completamente qualificado','Smileys_Emoção','rosto sorridente','sorrindo rosto com olhos sorridentes','Emoji'),
@@ -4306,3 +4318,22 @@ insert into emojis(codHex, qualificacao, categoria, subcategoria, descricao, tip
 ('&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F','completamente qualificado','Bandeiras','subdivisão-bandeira','bandeira: Inglaterra','Emoji'),
 ('&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F','completamente qualificado','Bandeiras','subdivisão-bandeira','bandeira: Escócia','Emoji'),
 ('&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F','completamente qualificado','Bandeiras','subdivisão-bandeira','bandeira: País de Gales','Emoji');
+
+
+
+CREATE TABLE public.emojis_categorias(
+	id serial not null primary key,
+	ordem_categoria smallint not null,
+	categoria varchar(30)
+);
+
+INSERT INTO public.emojis_categorias (ordem_categoria, categoria)
+SELECT DISTINCT 
+	0 as ordem_categoria, 
+	categoria,
+	codHex varchar(100)
+FROM public.emojis 
+WHERE 
+	tipo NOT LIKE 'Tom de Pele' AND 
+	categoria NOT LIKE 'Componente' 
+ORDER BY categoria ASC; 

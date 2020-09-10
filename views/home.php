@@ -11,21 +11,21 @@
 				<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
 					<?php 
 						foreach($categorias as $categoria): 
-							if($categoria['categoria'] == "Emojis_Pessoas"){
+							if($categoria['ordem_categoria'] == 1){
 								$controleAbas = "nav-item active";
 								$expandido = "true";
 							}else{
 								$controleAbas = "nav-item";
 								$expandido = "false";
 							};
-							echo "<li class='$controleAbas'><a class='nav-link' data-toggle='tab' href='#".$categoria['categoria']."' aria-expanded='$expandido'>".str_replace('_', ' e ', $categoria['categoria'])."</a></li>";
+							echo "<li class='$controleAbas'><a class='nav-link' data-toggle='tab' href='#".$categoria['categoria']."' aria-expanded='$expandido' style='font-size: 25px' data-toggle='tooltip' data-html='true' title='".str_replace('_', ' e ', $categoria['categoria'])."'>".$categoria['codhex']."</a></li>";
 						endforeach; 
 					?>
 				</ul>
 				<div class="tab-content caixasPrincipais" id="nav-tabContent">
 					<?php 
 						foreach($categorias as $categoria): 
-							if($categoria['categoria'] == "Smileys_Emoção"){
+							if($categoria['ordem_categoria'] == 1){
 								$conteudoEmojis = "tab-pane fade active in";
 							}else{
 								$conteudoEmojis = "tab-pane fade";
@@ -36,7 +36,7 @@
 								foreach($this->obterSubcategoria($categoria['categoria']) as $subcategoria):
 									echo "<div>".$subcategoria['subcategoria']."</div>";
 									foreach($this->obterEmojisSubcategoria($categoria['categoria'], $subcategoria['subcategoria']) as $emojis_categoria_subcategoria):
-										echo "<div class='emoji'><span id='".$emojis_categoria_subcategoria['codhex']."' href='#".$emojis_categoria_subcategoria['codhex']."' height='15' border='0' data-toggle='tooltip' data-html='true' title='Descrição: ".$emojis_categoria_subcategoria['descricao']."'>".$emojis_categoria_subcategoria['codhex']."</span></div>";
+										echo "<div class='emoji'><span id='".$emojis_categoria_subcategoria['codhex']."' href='#".$emojis_categoria_subcategoria['codhex']."' height='15' border='0' data-toggle='tooltip' data-html='true' title='Código: ".str_replace('&#x', '', $emojis_categoria_subcategoria['codhex'])."\nDescrição: ".$emojis_categoria_subcategoria['descricao']."'>".$emojis_categoria_subcategoria['codhex']."</span></div>";
 									endforeach;
 								endforeach;
 								

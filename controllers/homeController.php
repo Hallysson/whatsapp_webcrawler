@@ -9,7 +9,7 @@ class homeController extends controllerGeral {
 		$total_emojis = $e->obterTotalEmojis();
 		$emojis = $e->obterTodosEmojis();
 		$total_categorias = $e->ObterTotalCategorias();
-		$categorias = $e->obterTodasCategorias();
+		$categorias = $e->obterEmojisCategorias();
 
 		$dados['total_emojis'] = $total_emojis;
 		$dados['emojis'] = $emojis;

@@ -69,6 +69,17 @@ class Emojis extends modelGeral {
 		return $array;
 	}
 
+	public function obterEmojisCategorias() {
+		$sql = $this->db->prepare("SELECT ordem_categoria, categoria, codhex FROM public.emojis_categorias");
+		$sql->execute();
+
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetchAll();
+		}
+
+		return $array;
+	}
+
 	public function ObterTotalSubcategorias() {
 		$sql = $this->db->query("SELECT COUNT(distCategorias.categoria) as c FROM(SELECT DISTINCT subcategoria FROM public.emojis WHERE tipo NOT LIKE 'Tom de Pele') as distSubcategorias");
 		$row = $sql->fetch();

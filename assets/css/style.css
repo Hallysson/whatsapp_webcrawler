@@ -4,7 +4,6 @@
 
 .caixas{
 	padding-top: 10px;
-	background: #FFFFFF;
 	border: 0.5px solid #e0e0e0;
 	box-shadow: 0 4px 4px -2px #989898;
 	-moz-box-shadow: 0 4px 4px -2px #989898;
@@ -22,6 +21,7 @@
 }
 
 .emoji{
+	background-color: #FFFFFF;
 	display: inline-block;
 	height: 40px;
 	width: 40px;

@@ -1,4 +1,6 @@
 <?php
+namespace Core;
+
 class Core {
 
 	public function run() {
@@ -29,9 +31,12 @@ class Core {
 			}
 
 		} else {
-			$currentController = 'homeController';
+			$currentController = 'HomeController';
 			$currentAction = 'index';
 		}
+
+		$currentController = ucfirst($currentController);
+		$prefix = '\Controllers\\';
 		
 		/*
 		cho '<hr/>';
@@ -40,12 +45,14 @@ class Core {
 		echo 'PARAMS: '.print_r($params, true)."<br/>";
 		*/
 		
-		if(!file_exists('controllers/'.$currentController.'.php') || !method_exists($currentController, $currentAction)) {
-			$currentController = 'notfoundController';
+		if(!file_exists('Controllers/'.$currentController.'.php') || 
+			!method_exists($prefix.$currentController, $currentAction)) {
+			$currentController = 'NotfoundController';
 			$currentAction = 'index';
 		}
 
-		$c = new $currentController();
+		$newController = $prefix.$currentController;
+		$c = new $newController();
 
 		call_user_func_array(array($c, $currentAction), $params);
 		

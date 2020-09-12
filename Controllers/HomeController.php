@@ -1,7 +1,14 @@
 <?php
-class homeController extends controllerGeral {
+namespace Controllers;
+
+use \Core\ControllerGeral;
+use \Models\Emojis;
+
+class HomeController extends ControllerGeral {
 
 	public function index() {
+		
+		// Carregar dados de emojis do Banco de Dados
 		$dados = array();
                                                                                                                                                                                                                                               
 		$e = new Emojis();
@@ -16,7 +23,8 @@ class homeController extends controllerGeral {
 		$dados['total_categorias'] = $total_categorias;
 		$dados['categorias'] = $categorias;
 
-		$this->loadTemplate('home', $dados);
+		// Carregar dados dos emojis na página
+		$this->loadTemplate('Home', $dados);
 	}
 
 	public function obterEmoji($codhex){
@@ -28,7 +36,7 @@ class homeController extends controllerGeral {
 
 		$dados['obterEmoji'] = $obterEmoji;
 
-		$this->loadTemplate('home', $dados);
+		$this->loadTemplate('Home', $dados);
 	}
 
 	public function obterEmojisCategoria($categoria){

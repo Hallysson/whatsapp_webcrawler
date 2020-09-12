@@ -1,5 +1,9 @@
 <?php
-class Emojis extends modelGeral {
+namespace Models;
+
+use \Core\ModelGeral;
+
+class Emojis extends ModelGeral {
 
 	public function obterTotalEmojis() {
 		$sql = $this->db->query("SELECT COUNT(*) as c FROM emojis WHERE tipo NOT LIKE 'Tom de Pele' AND qualificacao LIKE 'completamente qualificado'");

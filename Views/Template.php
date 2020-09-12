@@ -3,8 +3,8 @@
 	<head>
 		<title>Campanhas Whatsapp</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>Assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>Assets/css/style.css" />
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -31,9 +31,9 @@
 			</nav>
 			<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 			
-			<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/jquery.min.js"></script>
-			<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/script.js"></script>
+			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/jquery.min.js"></script>
+			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/script.js"></script>
 		</div>
 	</body>
 </html>

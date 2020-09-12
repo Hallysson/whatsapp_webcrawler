@@ -11,7 +11,7 @@ require_once('vendor/autoload.php'); //realizando o autoload das classes pelo co
 $url = 'https://web.whatsapp.com'; // definindo a url
 
 $host = 'http://localhost:4444/wd/hub'; // Host default
-$capabilities = DesiredCapabilities::chrome(); // escolhendo o driver como chrome
+$capabilities = DesiredCapabilities::firefox(); // escolhendo o driver como firefox
 $driver = RemoteWebDriver::create($host, $capabilities, 5000); // criando uma nova conexão com o driver
 
 $driver->get($url); // realizando uma requisição HTTP get na $url
@@ -27,7 +27,7 @@ foreach($destinatarios as $destinatario){
     $chat_box = $driver->findElement(WebDriverBy::className("_3uMse"));
     sleep(3);
     $chat_box->click();
-    $chat_box->sendKeys(substr($destinatario,0,5)."\nConsegui subir o projeto pro Github!.\n Faça o clone na sua máquina dentro da pasta do projeto pelo terminal: .\ngit clone git@github.com:Hallysson/whatsapp_webcrawler.git.");
+    $chat_box->sendKeys(substr($destinatario,0,5)."\nTeste Selenium.");
 
     $botao_enviar = $driver->findElement(WebDriverBy::xPath("//span[@data-icon='send']"));
     sleep(3);

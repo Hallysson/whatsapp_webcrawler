@@ -1,5 +1,7 @@
 <?php
-class modelGeral {
+namespace Core;
+
+class ModelGeral {
 
 	protected $db;
 

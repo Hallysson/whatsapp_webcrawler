@@ -1,5 +1,9 @@
 <?php
-class Usuarios extends modelGeral {
+namespace Models;
+
+use \Core\ModelGeral;
+
+class Usuarios extends ModelGeral {
 
 	public function getTotalUsuarios() {
 		$sql = $this->db->query("SELECT COUNT(*) as c FROM usuarios");

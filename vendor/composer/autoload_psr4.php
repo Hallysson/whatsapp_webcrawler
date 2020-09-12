@@ -7,5 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
+    'Models\\' => array($baseDir . '/Models'),
     'Facebook\\WebDriver\\' => array($vendorDir . '/facebook/webdriver/lib'),
+    'Core\\' => array($baseDir . '/Core'),
+    'Controllers\\' => array($baseDir . '/Controllers'),
 );

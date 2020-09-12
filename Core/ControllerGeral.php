@@ -1,18 +1,20 @@
 <?php
-class controllerGeral {
+namespace Core;
+
+class ControllerGeral {
 
 	public function loadView($viewName, $viewData = array()) {
 		extract($viewData);
-		require 'views/'.$viewName.'.php';
+		require 'Views/'.$viewName.'.php';
 	}
 
 	public function loadTemplate($viewName, $viewData = array()) {
-		require 'views/template.php';
+		require 'Views/Template.php';
 	}
 
 	public function loadViewInTemplate($viewName, $viewData = array()) {
 		extract($viewData);
-		require 'views/'.$viewName.'.php';
+		require 'Views/'.$viewName.'.php';
 	}
 
 }

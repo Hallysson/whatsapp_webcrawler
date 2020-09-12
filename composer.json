@@ -10,5 +10,12 @@
     "require": {
         "facebook/webdriver": "^1.7",
         "components/jquery": "^3.2"
+    },
+    "autoload":{
+        "psr-4":{
+            "Controllers\\":"Controllers/",
+            "Core\\":"Core/",
+            "Models\\":"Models/"
+        }
     }
 }

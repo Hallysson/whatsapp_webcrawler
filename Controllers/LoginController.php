@@ -1,5 +1,10 @@
 <?php
-    class loginController extends controllerGeral {
+namespace Controllers;
+
+use \Core\ControllerGeral;
+use \Models\Usuarios;
+
+    class LoginController extends ControllerGeral {
 
         public function index() {
 
@@ -24,7 +29,7 @@
             }
 
             //Chamando a view da página view e passando valores
-			$this->loadTemplate('login');
+			$this->loadTemplate('Login');
         }
 
         public function sair(){

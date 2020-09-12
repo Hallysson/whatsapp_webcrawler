@@ -11,9 +11,18 @@ class ComposerStaticInita79607c377b2933d549860651822b8d6
         array (
             'Symfony\\Component\\Process\\' => 26,
         ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
         'F' => 
         array (
             'Facebook\\WebDriver\\' => 19,
+        ),
+        'C' => 
+        array (
+            'Core\\' => 5,
+            'Controllers\\' => 12,
         ),
     );
 
@@ -22,9 +31,21 @@ class ComposerStaticInita79607c377b2933d549860651822b8d6
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
         'Facebook\\WebDriver\\' => 
         array (
             0 => __DIR__ . '/..' . '/facebook/webdriver/lib',
+        ),
+        'Core\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Core',
+        ),
+        'Controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Controllers',
         ),
     );
 

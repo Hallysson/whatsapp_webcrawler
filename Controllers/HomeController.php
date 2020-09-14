@@ -2,12 +2,14 @@
 namespace Controllers;
 
 use \Core\ControllerGeral;
+use Facebook\WebDriver\FWDriver;
 use \Models\Emojis;
+require_once 'FWDriver.php';
 
 class HomeController extends ControllerGeral {
 
-	public function index() {
-		
+	public function index() 
+	{
 		// Carregar dados de emojis do Banco de Dados
 		$dados = array();
                                                                                                                                                                                                                                               
@@ -27,7 +29,21 @@ class HomeController extends ControllerGeral {
 		$this->loadTemplate('Home', $dados);
 	}
 
-	public function obterEmoji($codhex){
+
+	public function enviar($mensagem)
+	{
+		$destinatarios = array('Bruno Guimarães (filho)');
+
+		$fwd = new FWDriver();
+		$fwd->enviarMensagem($destinatarios, $mensagem);
+
+		unset($_POST);
+		
+		//$this->loadTemplate('Home');
+	}
+
+	public function obterEmoji($codhex)
+	{
 		$dados = array();
 
 		$e = new Emojis();
@@ -39,8 +55,8 @@ class HomeController extends ControllerGeral {
 		$this->loadTemplate('Home', $dados);
 	}
 
-	public function obterEmojisCategoria($categoria){
-
+	public function obterEmojisCategoria($categoria)
+	{
 		$e = new Emojis();
 		
 		$emojis_categorias = $e->obterEmojisFiltroCategoria($categoria);
@@ -48,8 +64,8 @@ class HomeController extends ControllerGeral {
 		return $emojis_categorias;
 	}
 
-	public function obterSubcategoria($categoria){
-		
+	public function obterSubcategoria($categoria)
+	{
 		$e = new Emojis();
 		
 		$subcategorias = $e->obterFiltroSubcategorias($categoria);
@@ -57,8 +73,8 @@ class HomeController extends ControllerGeral {
 		return $subcategorias;
 	}
 
-	public function obterEmojisSubcategoria($categoria, $subcategoria){
-
+	public function obterEmojisSubcategoria($categoria, $subcategoria)
+	{
 		$e = new Emojis();
 		
 		$emojis_categorias_subcategoria = $e->obterEmojisFiltroSubcategoria($categoria, $subcategoria);

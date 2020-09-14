@@ -1,5 +1,4 @@
 <?php
-
 namespace Facebook\WebDriver; //Definição do namespace
 use Facebook\WebDriver\Remote\DesiredCapabilities; //chamada à classe de drivers
 use Facebook\WebDriver\Remote\RemoteWebDriver; //chamada à classe de WebDriver

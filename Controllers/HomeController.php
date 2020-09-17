@@ -2,9 +2,9 @@
 namespace Controllers;
 
 use \Core\ControllerGeral;
-use Facebook\WebDriver\FWDriver;
+use \Facebook\WebDriver\FWDriverFirefox;
+use \Facebook\WebDriver\FWDriverChrome;
 use \Models\Emojis;
-require_once 'FWDriver.php';
 
 class HomeController extends ControllerGeral {
 
@@ -34,7 +34,7 @@ class HomeController extends ControllerGeral {
 	{
 		$destinatarios = array('Bruno Guimarães (filho)');
 
-		$fwd = new FWDriver();
+		$fwd = new FWDriverChrome();
 		$fwd->enviarMensagem($destinatarios, $mensagem);
 
 		unset($_POST);

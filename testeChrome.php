@@ -1,5 +1,6 @@
 <?php
 namespace Facebook\WebDriver; //Definição do namespace
+
 use Facebook\WebDriver\Remote\DesiredCapabilities; //chamada à classe de drivers
 use Facebook\WebDriver\Remote\RemoteWebDriver; //chamada à classe de WebDriver
 
@@ -26,7 +27,7 @@ foreach($destinatarios as $destinatario){
     $chat_box = $driver->findElement(WebDriverBy::className("_3uMse"));
     sleep(3);
     $chat_box->click();
-    $chat_box->sendKeys(substr($destinatario,0,5)."\nTeste Selenium.");
+    $chat_box->sendKeys(substr($destinatario,0,5)."\nTeste *Chrome*!!");
 
     $botao_enviar = $driver->findElement(WebDriverBy::xPath("//span[@data-icon='send']"));
     sleep(3);

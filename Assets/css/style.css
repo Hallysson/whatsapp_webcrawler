@@ -1,10 +1,26 @@
 #labelCampanha{
-	background-color: #eee;
+	background-color: #EEE;
 }
+/*
+.nav-tabs > li >a{
+	color: #FFF;
+  }
+  .nav-item > li:hover >a,
+  .nav-item > li.active >a
+  {
+	color: #EEE;
+  }
+*/
+
+.nav-item .active {
+  color: greenyellow;
+  background-color: greenyellow;
+}
+
 
 .caixas{
 	padding-top: 10px;
-	border: 0.5px solid #e0e0e0;
+	border: 0.5px solid #E0E0E0;
 	box-shadow: 0 4px 4px -2px #989898;
 	-moz-box-shadow: 0 4px 4px -2px #989898;
 	-webkit-box-shadow: 0 4px 4px -2px #989898;
@@ -21,16 +37,14 @@
 }
 
 .emoji{
-	background-color: #FFFFFF;
+	background-color: #FFF;
 	display: inline-block;
 	height: 40px;
-	width: 40px;
-	margin-left: 15px;
-	margin-top: 10px;
-	margin-right: 0px;
-	margin-bottom: 0px;
+	width: 0px;
+	margin: 15px;
 	padding: 5px 5px;
-	border: 0px solid grey;
+	border: 1px solid grey;
+	border-radius: 5% 5% 5% 5%;
 	text-align: center;
 	font-size: 25px;
 }

@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>Assets/css/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>Assets/css/style.css" />
+		<!--
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>tinymce.init({selector:'textarea'});</script>
+		-->  
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -30,10 +34,28 @@
 				</ol>
 			</nav>
 			<?php $this->loadViewInTemplate($viewName, $viewData); ?>
-			
+
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/jquery.min.js"></script>
 			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/bootstrap.min.js"></script>
-			<script type="text/javascript" src="<?php echo BASE_URL; ?>Assets/js/script.js"></script>
+			
+			<script>
+				function insertMetachars(sStartTag, sEndTag) 
+				{
+					var bDouble = arguments.length > 1, oMsgInput = document.criarCampanha.mensagem, nSelStart = oMsgInput.selectionStart, nSelEnd = oMsgInput.selectionEnd, sOldText = oMsgInput.value;
+					oMsgInput.value = sOldText.substring(0, nSelStart) + (bDouble ? sStartTag + sOldText.substring(nSelStart, nSelEnd) + sEndTag : sStartTag) + sOldText.substring(nSelEnd);
+					oMsgInput.setSelectionRange(bDouble || nSelStart === nSelEnd ? nSelStart + sStartTag.length : nSelStart, (bDouble ? nSelEnd : nSelStart) + sStartTag.length);
+					oMsgInput.focus();
+				}
+			</script>
+			
+			<script>
+				//usando jQuery
+				$("button").click(function() 
+				{
+					var emoji = $( this ).text();
+					$('#mensagem').val($('#mensagem').val() + emoji);
+				});
+			</script>
 		</div>
 	</body>
 </html>

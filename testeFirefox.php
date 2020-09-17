@@ -12,7 +12,7 @@ $url = 'https://web.whatsapp.com'; // definindo a url
 
 $host = 'http://localhost:4444/wd/hub'; // Host default
 $capabilities = DesiredCapabilities::firefox(); // escolhendo o driver como firefox
-$driver = RemoteWebDriver::create($host, $capabilities, 5000); // criando uma nova conexão com o driver
+$driver = RemoteWebDriver::create($host, $capabilities); // criando uma nova conexão com o driver
 
 $driver->get($url); // realizando uma requisição HTTP get na $url
 sleep(20);
@@ -27,9 +27,12 @@ foreach($destinatarios as $destinatario){
     $chat_box = $driver->findElement(WebDriverBy::className("_3uMse"));
     sleep(3);
     $chat_box->click();
-    $chat_box->sendKeys(substr($destinatario,0,5)."\nTeste Selenium.");
-
+    echo 'clicou';
+    $chat_box->sendKeys("Teste *Firefox*!!");
+    echo 'digitou';
+    
     $botao_enviar = $driver->findElement(WebDriverBy::xPath("//span[@data-icon='send']"));
     sleep(3);
     $botao_enviar->click();
+    echo 'enviou';
 }
